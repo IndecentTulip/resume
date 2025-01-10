@@ -1,4 +1,0 @@
-    nmp install
-
-    npm start
-
