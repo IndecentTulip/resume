@@ -41,14 +41,12 @@ body {
 
   width: 100%;
   margin-left: 15px;
-  border-bottom: 2px solid #00ff00;
   box-sizing: border-box;
 }
 
 .TerminalInput span {
   color: #00ff00;
   font-weight: bold;
-  margin-right: 10px;
 }
 
 pre {
@@ -65,7 +63,6 @@ pre p {
 
 pre p:hover {
   cursor: pointer;
-  color: #00cc00;
 }
 
 .PageContainer p {
@@ -78,8 +75,6 @@ pre p:hover {
 .PageContainer .PS1 {
   color: #e4be75;
 }
-
-
 
 .PageContainer span {
   color: white;

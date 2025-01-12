@@ -15,11 +15,30 @@ const Main = () => {
   folders.set("experience", true);
 
   const files = new Map();
-  files.set("test", `hello this is placeholder`);
+  files.set("README", `Hello, I'm Oleksandr Babenko
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+My technical skills are:
+* Languages: Python, C, C++, PostgreSQL, MongoDB, JavaScript, HTML/CSS
+* Frameworks: React
+* Developer Tools: Git, Docker, Vim, Neovim, Linux
+* Concepts: Object-Oriented programming, UML diagrams, ER diagram,
+Data structures and algorithms
+* Libraries: Flask
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+You can contact me via:
+* Mobile Phone: +1 778 814 6839
+* Email: aleksandrbabenko02@gmail.com
+* Github Accounts: https://github.com/IndecentTulip & https://github.com/CrunchyCloud
+* LinkedIn: https://www.linkedin.com/in/oleksandr-babenko-72a5541a8
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+`);
 
   const [displayQueue, setDisplayQueue] = useState([]);
   const enqueue = (item) => {
     setDisplayQueue(prevQueue => [...prevQueue, item]);
+  };
+  const dequeue = () => {
+    setDisplayQueue(prevQueue => prevQueue.slice(1));
   };
 
   const terminal = new Terminal(path, folders, files, displayQueue, setDisplayQueue, enqueue)
@@ -28,6 +47,7 @@ const Main = () => {
   window.onload = function() {
     if (!helpMessage){
       enqueue(terminal.README)
+      enqueue(terminal.READMEAdd)
       setHelpMessage(true)
     }
   };
@@ -44,8 +64,11 @@ const Main = () => {
 
   };
 
-  //useEffect(() => {
-  //}, []);
+  useEffect(() => {
+    if (displayQueue.length > 3){
+      dequeue()
+    }
+  }, [handleSubmit]);
 
   return (
     <div className='PageContainer'>

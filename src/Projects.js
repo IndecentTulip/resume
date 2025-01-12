@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import Terminal from './TerminalLib.js'
 
@@ -9,28 +9,25 @@ const Projects = () => {
 
   const path = "~/projects"
   const folders = new Map();
-  folders.set("aboutme", true);
-  folders.set("education", true);
-  folders.set("projects", true);
-  folders.set("experience", true);
-
   const files = new Map();
-  files.set("test", `hello this is placeholder`);
+  files.set("helth_monitoring_sys", `hello this is placeholder`);
+  files.set("tor_cli", `hello this is placeholder`);
 
   const [displayQueue, setDisplayQueue] = useState([]);
   const enqueue = (item) => {
     setDisplayQueue(prevQueue => [...prevQueue, item]);
   };
+  const dequeue = () => {
+  setDisplayQueue(prevQueue => prevQueue.slice(1));
+  };
 
   const terminal = new Terminal(path, folders, files, displayQueue, setDisplayQueue, enqueue)
 
-  const [helpMessage, setHelpMessage] = useState(false);
-  window.onload = function() {
-    if (!helpMessage){
-      enqueue(terminal.README)
-      setHelpMessage(true)
-    }
-  };
+  const location = useLocation();
+  useEffect(() => {
+    console.log('URL changed to:', location.pathname);
+      enqueue(terminal.README2)
+  }, [location]);
 
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
@@ -44,8 +41,13 @@ const Projects = () => {
 
   };
 
-  //useEffect(() => {
-  //}, []);
+   useEffect(() => {
+    if (displayQueue.length > 3){
+      dequeue()
+    }
+  }, [handleSubmit]);
+
+
 
   return (
     <div className='PageContainer'>

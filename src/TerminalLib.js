@@ -18,8 +18,12 @@ Here are some commands you can use :)
 - ls
 - cd
 - cat
+- clear
 - help
 `
+  READMEAdd
+  README2 = `Don't forget that you can use 
+"cd" to go back to the "main page" where you came from !!!`
 
   ps1 = "you@webbrowser:"
   regexNavigate = /^cd [a-zA-Z].*/;
@@ -52,6 +56,12 @@ Here are some commands you can use :)
     for (const key of this.files.keys()) {
       this.contence += key + `\n`
     }
+
+    this.READMEAdd = 
+    <div> 
+      <p style={{color: 'white'}}>white - means a file (can open with "cat")</p>
+      <p style={{color: '#579db6'}}>blue - means a folder (can go to it with "cd")</p>
+    </div>
 
   }
 
@@ -127,6 +137,7 @@ Here are some commands you can use :)
     }
     if (this.regexHelp.test(inputValue)){
       this.enqueue(this.finalRender(inputValue, this.README))
+      this.enqueue(this.READMEAdd)
     }
 
 
