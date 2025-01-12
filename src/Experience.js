@@ -1,42 +1,66 @@
-import './Experience.css';
 import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import Terminal from './TerminalLib.js'
 
 const Experience = () => {
+
   const navigate = useNavigate();
   const [inputValue, setInputValue] = useState("")
 
+  const path = "~/experience"
+  const folders = new Map();
+  folders.set("aboutme", true);
+  folders.set("education", true);
+  folders.set("projects", true);
+  folders.set("experience", true);
 
-  const regexNavigate = /^cd [a-zA-Z].*/;
+  const files = new Map();
+  files.set("test", `hello this is placeholder`);
 
+  const [displayQueue, setDisplayQueue] = useState([]);
+  const enqueue = (item) => {
+    setDisplayQueue(prevQueue => [...prevQueue, item]);
+  };
+
+  const terminal = new Terminal(path, folders, files, displayQueue, setDisplayQueue, enqueue)
+
+  const [helpMessage, setHelpMessage] = useState(false);
+  window.onload = function() {
+    if (!helpMessage){
+      enqueue(terminal.README)
+      setHelpMessage(true)
+    }
+  };
 
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
   };
 
   const handleSubmit = (event) => {
-    event.preventDefault();  // Prevent page reload
-    console.log('Input Value:', inputValue);  // Log the input value to the console (you can use it as needed)
+    event.preventDefault();  
+    console.log('Input Value:', inputValue);
 
-    if (regexNavigate.test(inputValue)){
-      const path = inputValue.replace(/^cd /, "")
-      navigate("/" + path);
-    }
+    terminal.interpretCommand(inputValue, navigate, setInputValue);
 
   };
 
+  //useEffect(() => {
+  //}, []);
 
   return (
     <div className='PageContainer'>
-      <form onSubmit={handleSubmit}>
-        
+
+      {terminal.renderDisplayQueue()}
+
+      <p className='PS1'>{terminal.ps1}</p>
+      <form onSubmit={handleSubmit} className='TerminalInput'>
+        <span>$</span>
         <input 
           type="text"
           value={inputValue}
           onChange={handleInputChange}
           placeholder="Enter command"
         />
-
       </form>
     </div>
   );
