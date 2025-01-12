@@ -1,27 +1,25 @@
-/* Center the terminal on the screen and apply borders */
 .PageContainer {
-  background-color: #2e2e2e; /* Dark gray background */
-  color: #00ff00; /* Green text color */
-  font-family: 'Courier New', Courier, monospace; /* Monospace font for terminal feel */
+  background-color: #232627;
+  color: #00ff00; 
+  font-family: 'Courier New', Courier, monospace;
   padding: 20px;
-  width: 80%; /* Set a fixed width, can adjust as needed */
-  max-width: 800px; /* Maximum width for larger screens */
-  height: 80vh; /* 80% of the viewport height */
-  border: 3px solid #00ff00; /* Green border */
-  border-radius: 10px; /* Rounded corners for the terminal window */
-  box-shadow: 0 0 10px rgba(0, 255, 0, 0.5); /* Soft glowing shadow for the terminal look */
-  position: fixed; /* Position fixed to keep it in place */
-  top: 50%; /* Center vertically */
-  left: 50%; /* Center horizontally */
-  transform: translate(-50%, -50%); /* Adjust for exact centering */
-  overflow-y: auto; /* Scrollable if content overflows */
+  width: 80%; 
+  max-width: 800px; 
+  height: 80vh; 
+  border: 3px solid #00ff00; 
+  border-radius: 10px; 
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.5); 
+  position: fixed; 
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  overflow-y: auto; 
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
 }
 
-/* Style the terminal input box */
 .TerminalInput {
   display: flex;
   align-items: center;
@@ -31,14 +29,14 @@
 
 
 .TerminalInput input {
-  background-color: #2e2e2e;
-  color: #00ff00;
+  background-color: #232627;
+  color: white;
   border: none;
   outline: none;
-  font-size: 16px;
+  font-size: 20px;
+
   width: 100%;
-  padding: 10px;
-  margin-left: 10px;
+  margin-left: 15px;
   border-bottom: 2px solid #00ff00;
   box-sizing: border-box;
 }
@@ -49,7 +47,6 @@
   margin-right: 10px;
 }
 
-/* Style the command output (ls, cat, etc.) */
 pre {
   margin: 5px 0;
   font-size: 16px;
@@ -58,7 +55,6 @@ pre {
   color: #00ff00;
 }
 
-/* Style folder names in the ls output */
 pre p {
   margin: 0;
 }
@@ -71,20 +67,29 @@ pre p:hover {
 .PageContainer p {
   margin-top: 0px;
   margin-bottom: 0px;
-  font-size: 20px;
+  /*font-size: 20px;*/
+  color: white;
+}
+
+.PageContainer .PS1 {
+  color: #e4be75;
+}
+
+
+
+.PageContainer span {
+  color: white;
 }
 
 .PageContainer > pre {
   margin-bottom: 10px;
 }
 
-/* Scrollable container if content overflows */
 .PageContainer {
   overflow-y: auto;
 }
 
-/* Style when folder is highlighted in ls */
 .PageContainer .folder {
-  color: lightblue;
+  color: #579db6;
 }
 
