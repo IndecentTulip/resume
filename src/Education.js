@@ -2,6 +2,11 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import Terminal from './TerminalLib.js'
 
+import highSchoolImg from './assets/High_school.jpg'
+import kpulogo from './assets/kpu_logo.png'
+import bcitlogo from './assets/BCIT-logo-.png'
+import ciscologo from './assets/cisco-logo.png'
+
 const Education = () => {
 
   const navigate = useNavigate();
@@ -10,13 +15,38 @@ const Education = () => {
   const path = "~/education"
   const folders = new Map();
   const files = new Map();
-  files.set("high_school", `* Lyceum Of Information Technology`);
-  files.set("universities", `* Kwantlen Polytechnic University (KPU)
-Diploma in Computer Information Systems
-* British Columbia Institute of Technology (BCIT)
-Technology Entry (TE)
-`);
-  files.set("certification", `CCNAv7: Introduction to Networks`);
+  const highSchool = 
+<div>
+  <img src={highSchoolImg} alt="high school photo" width="400" height="400" />
+  <p>* Lyceum Of Information Technology</p>
+  <p>Jun. 2022</p>
+</div>
+  files.set("highSchool", highSchool);
+
+  // TODO ADD an ability to download a transcript
+  const universities =
+<div>
+  <img src={kpulogo} alt="KPU logo" width="100" height="100" />
+  <p>* Kwantlen Polytechnic University (KPU)</p>
+  <p style={{color: '#ff9700'}}>Diploma in Computer Information Systems</p>
+  <p>Jan. 2023 -- Dec. 2024</p>
+  <p>GPA: 3.2</p>
+  <img src={bcitlogo} alt="BCIT logo" width="100" height="100" />
+  <p>* British Columbia Institute of Technology (BCIT)</p>
+  <p style={{color: '#ff9700'}}>Technology Entry (TE) </p>
+  <p>Jul. 2022  -- Oct. 2022</p>
+</div>
+
+  files.set("universities", universities);
+
+  // TODO ADD an ability to download a certificat conformation 
+  const certification =
+<div>
+  <img src={ciscologo} alt="cisco logo" width="100" height="50"/>
+  <p style={{color: '#ff9700'}}>CCNAv7: Introduction to Networks</p>
+  <p>May. 2024</p>
+</div>
+  files.set("certification", certification);
 
   const [displayQueue, setDisplayQueue] = useState([]);
   const enqueue = (item) => {
@@ -55,6 +85,9 @@ Technology Entry (TE)
 
 
   return (
+
+    <div>
+    <div className='Cat'> </div>
     <div className='PageContainer'>
 
       {terminal.renderDisplayQueue()}
@@ -69,6 +102,7 @@ Technology Entry (TE)
           placeholder="Enter command"
         />
       </form>
+    </div>
     </div>
   );
 

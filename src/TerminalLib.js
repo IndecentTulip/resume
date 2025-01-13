@@ -14,24 +14,34 @@ class Terminal{
                        / ~ ~ ~~ | ~~~ ~~ \\    
                       /________.|.________\\   
                      \`---------\`-'---------'
-Here are some commands you can use :)
+Here are some linux commands you can use :)
+- ls (show you "files" that you can interact with)
+- cd (open a "folder", you can use "cd" & "cd .." to return to main page)
+- cat (open a "file" and show it's contence)
+- clear (clear the screen/terminal)
+- help (will show this message again)
+`
+
+  READMEPhone =`Here are some commands you can use :)
 - ls
 - cd
 - cat
 - clear
 - help
 `
+
   READMEAdd
   README2 = `Don't forget that you can use 
 "cd" to go back to the "main page" where you came from !!!`
 
   ps1 = "you@webbrowser:"
-  regexNavigate = /^cd [a-zA-Z].*/;
-  regexNavigateHome = /^cd$/;
-  regexDisplay = /^ls$/;
-  regexClear = /^clear$/;
-  regexHelp = /^help$/;
-  regexOpen = /^cat [a-zA-Z].*$/;
+  regexNavigate = /^[cC][dD] [a-zA-Z].*/;
+  regexNavigateHome = /^[cC][dD]$/;
+  regexNavigateHome2 = /^[cC][dD] ..$/;
+  regexDisplay = /^[lL][sS]$/;
+  regexClear = /^[cC][lL][eE][aA][rR]$/;
+  regexHelp = /^[hH][eE][lL][pP]$/;
+  regexOpen = /^[cC][aA][tT] [a-zA-Z].*$/;
   contence = ``
   
   constructor(path, folders, files, displayQueue, setDisplayQueue, enqueue){
@@ -114,6 +124,8 @@ Here are some commands you can use :)
   };
 
   interpretCommand(inputValue, navigate, setInputValue,){
+
+
     if (this.regexNavigate.test(inputValue)){
       const path = inputValue.replace(/^cd /, "")
       if (this.folders.has(path)){
@@ -121,6 +133,9 @@ Here are some commands you can use :)
       }
     }
     if (this.regexNavigateHome.test(inputValue)){
+      navigate("/resume")
+    }
+    if (this.regexNavigateHome2.test(inputValue)){
       navigate("/resume")
     }
     if (this.regexDisplay.test(inputValue)){

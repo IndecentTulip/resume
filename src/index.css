@@ -24,6 +24,17 @@ body {
   align-items: flex-start;
 }
 
+.Cat {
+  position: fixed; 
+  left: 60%; 
+  bottom: 90%; 
+  background-image: url('./assets/more_chunky_cat.gif');
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100px; 
+  height: 100px;
+}
+
 .TerminalInput {
   display: flex;
   align-items: center;

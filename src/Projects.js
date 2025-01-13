@@ -50,6 +50,9 @@ const Projects = () => {
 
 
   return (
+    <div>
+
+    <div className='Cat'> </div>
     <div className='PageContainer'>
 
       {terminal.renderDisplayQueue()}
@@ -64,6 +67,7 @@ const Projects = () => {
           placeholder="Enter command"
         />
       </form>
+    </div>
     </div>
   );
 

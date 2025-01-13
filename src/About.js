@@ -9,10 +9,11 @@ const About = () => {
 
   const path = "~/aboutme"
   const folders = new Map();
-  folders.set("aboutme", true);
 
   const files = new Map();
-  files.set("test", `hello this is placeholder`);
+  files.set("generalInfo", ``);
+  files.set("hobbies", ``);
+  files.set("IUseArchBtw", `I use arch btw`);
 
   const [displayQueue, setDisplayQueue] = useState([]);
   const enqueue = (item) => {
@@ -53,6 +54,9 @@ const About = () => {
 
 
   return (
+    <div>
+
+    <div className='Cat'> </div>
     <div className='PageContainer'>
 
       {terminal.renderDisplayQueue()}
@@ -67,6 +71,7 @@ const About = () => {
           placeholder="Enter command"
         />
       </form>
+    </div>
     </div>
   );
 

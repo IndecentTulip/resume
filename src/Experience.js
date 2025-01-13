@@ -2,6 +2,8 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import Terminal from './TerminalLib.js'
 
+import logicalogo from './assets/logicalogo.png'
+
 const Experience = () => {
 
   const navigate = useNavigate();
@@ -10,7 +12,17 @@ const Experience = () => {
   const path = "~/experience"
   const folders = new Map();
   const files = new Map();
-  files.set("volunteering", `hello this is placeholder`);
+
+  const volunteering =
+<div>
+  <img src={logicalogo} alt="logica it school photo" width="250" height="200" />
+  <p>* Logika IT school</p>
+  <p>program name: python start; location: ukraine</p>
+  <p style={{color: '#ff9700'}}>IT Teaching Assistant</p>
+  <p>Sep. 2019 -- May. 2021</p>
+  <p>Helped teaching kids python basics: functions, OOP, PyGame library</p>
+</div>
+  files.set("volunteering", volunteering);
 
   const [displayQueue, setDisplayQueue] = useState([]);
   const enqueue = (item) => {
@@ -47,6 +59,9 @@ const Experience = () => {
   }, [handleSubmit]);
 
   return (
+    <div>
+
+    <div className='Cat'> </div>
     <div className='PageContainer'>
 
       {terminal.renderDisplayQueue()}
@@ -61,6 +76,7 @@ const Experience = () => {
           placeholder="Enter command"
         />
       </form>
+    </div>
     </div>
   );
 
