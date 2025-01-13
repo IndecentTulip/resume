@@ -1,16 +1,21 @@
 {
   "files": {
     "main.css": "/resume/static/css/main.bd0532da.css",
-    "main.js": "/resume/static/js/main.0a2f2dbe.js",
+    "main.js": "/resume/static/js/main.d5ab99ec.js",
     "static/js/453.8ab44547.chunk.js": "/resume/static/js/453.8ab44547.chunk.js",
+    "static/media/High_school.jpg": "/resume/static/media/High_school.71415ca01edb80251bd6.jpg",
+    "static/media/kpu_logo.png": "/resume/static/media/kpu_logo.e955702ef09db9f0faee.png",
+    "static/media/cisco-logo.png": "/resume/static/media/cisco-logo.bbbfefcb50be8733dff6.png",
+    "static/media/logicalogo.png": "/resume/static/media/logicalogo.b842df73dbd097890dd3.png",
+    "static/media/BCIT-logo-.png": "/resume/static/media/BCIT-logo-.a07e1e188aa8d429d144.png",
     "static/media/more_chunky_cat.gif": "/resume/static/media/more_chunky_cat.e470f0f3a962de1e528f.gif",
     "index.html": "/resume/index.html",
     "main.bd0532da.css.map": "/resume/static/css/main.bd0532da.css.map",
-    "main.0a2f2dbe.js.map": "/resume/static/js/main.0a2f2dbe.js.map",
+    "main.d5ab99ec.js.map": "/resume/static/js/main.d5ab99ec.js.map",
     "453.8ab44547.chunk.js.map": "/resume/static/js/453.8ab44547.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.bd0532da.css",
-    "static/js/main.0a2f2dbe.js"
+    "static/js/main.d5ab99ec.js"
   ]
 }
