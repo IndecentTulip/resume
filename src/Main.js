@@ -24,7 +24,7 @@ const Main = () => {
   <p>* Frameworks: React</p>
   <p>* Developer Tools: Git, Docker, Vim, Neovim, Linux</p>
   <p>* Concepts: Object-Oriented programming, UML diagrams, ER diagram, Data structures and algorithms</p>
-  <p>* Libraries: Flask</p>
+  <p>* Libraries: Flask, Echo, HTMX</p>
   <p style={{color: '#ff9700'}}>You can contact me via:</p>
   <p>* Mobile Phone: +1 778 814 6839</p>
   <p>* Email: <a href="aleksandrbabenko02@gmail.com">aleksandrbabenko02@gmail.com</a></p>
@@ -77,6 +77,7 @@ const Main = () => {
   }, [handleSubmit]);
 
   return (
+    // TODO add an ability to click on Cat and play animation where it shows hearts
     <div>
 
     <div className='Cat'> </div>

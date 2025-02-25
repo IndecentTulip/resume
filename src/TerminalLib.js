@@ -2,12 +2,6 @@
 class Terminal{
 
   README =`
- ▄▄▄· ▄▄▌  ▄▄▄ .▐▄• ▄ .▄▄ ·     ▄▄▄  ▄▄▄ ..▄▄ · ▄• ▄▌• ▌ ▄ ·. ▄▄▄ .
-▐█ ▀█ ██•  ▀▄.▀· █▌█▌▪▐█ ▀.     ▀▄ █·▀▄.▀·▐█ ▀. █▪██▌·██ ▐███▪▀▄.▀·
-▄█▀▀█ ██▪  ▐▀▀▪▄ ·██· ▄▀▀▀█▄    ▐▀▀▄ ▐▀▀▪▄▄▀▀▀█▄█▌▐█▌▐█ ▌▐▌▐█·▐▀▀▪▄
-▐█ ▪▐▌▐█▌▐▌▐█▄▄▌▪▐█·█▌▐█▄▪▐█    ▐█•█▌▐█▄▄▌▐█▄▪▐█▐█▄█▌██ ██▌▐█▌▐█▄▄▌
- ▀  ▀ .▀▀▀  ▀▀▀ •▀▀ ▀▀ ▀▀▀▀     .▀  ▀ ▀▀▀  ▀▀▀▀  ▀▀▀ ▀▀  █▪▀▀▀ ▀▀▀ 
-
                           ______ ______
                          /      Y      \\
                         / ~~ ~~ | ~~ ~  \\
@@ -15,19 +9,29 @@ class Terminal{
                       /________.|.________\\   
                      \`---------\`-'---------'
 Here are some linux commands you can use :)
-- ls (show you "files" that you can interact with)
-- cd (open a "folder", you can use "cd" & "cd .." to return to main page)
-- cat (open a "file" and show it's contence)
-- clear (clear the screen/terminal)
-- help (will show this message again)
+- ls
+  (show you "files" that you can interact with)
+- cd [foldername] 
+  (open a "folder", you can use "cd" & "cd .." to return to main page)
+- view/cat [filename]
+  (open a "file" and show it's contence)
+- clear
+  (clear the screen/terminal)
+- help 
+  (will show this message again)
 `
 
   READMEPhone =`Here are some commands you can use :)
 - ls
-- cd
-- cat
+  (show you "files" that you can interact with)
+- cd [foldername] 
+  (open a "folder", you can use "cd" & "cd .." to return to main page)
+- view/cat [filename]
+  (open a "file" and show it's contence)
 - clear
-- help
+  (clear the screen/terminal)
+- help 
+  (will show this message again)
 `
 
   READMEAdd
@@ -42,6 +46,7 @@ Here are some linux commands you can use :)
   regexClear = /^[cC][lL][eE][aA][rR]$/;
   regexHelp = /^[hH][eE][lL][pP]$/;
   regexOpen = /^[cC][aA][tT] [a-zA-Z].*$/;
+  regexOpen2 = /^[vV][iI][eE][wW] [a-zA-Z].*$/;
   contence = ``
   
   constructor(path, folders, files, displayQueue, setDisplayQueue, enqueue){
@@ -143,6 +148,12 @@ Here are some linux commands you can use :)
     }
     if (this.regexOpen.test(inputValue)){
       const fileName = inputValue.replace(/^cat /, "")
+      if (this.files.has(fileName)){
+        this.enqueue(this.finalRender(inputValue,this.renderCat(fileName)))
+      }
+    }
+    if (this.regexOpen2.test(inputValue)){
+      const fileName = inputValue.replace(/^view /, "")
       if (this.files.has(fileName)){
         this.enqueue(this.finalRender(inputValue,this.renderCat(fileName)))
       }
