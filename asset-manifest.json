@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/resume/static/css/main.bd0532da.css",
-    "main.js": "/resume/static/js/main.d5ab99ec.js",
+    "main.js": "/resume/static/js/main.d0c4df5c.js",
     "static/js/453.8ab44547.chunk.js": "/resume/static/js/453.8ab44547.chunk.js",
     "static/media/High_school.jpg": "/resume/static/media/High_school.71415ca01edb80251bd6.jpg",
     "static/media/kpu_logo.png": "/resume/static/media/kpu_logo.e955702ef09db9f0faee.png",
@@ -11,11 +11,11 @@
     "static/media/more_chunky_cat.gif": "/resume/static/media/more_chunky_cat.e470f0f3a962de1e528f.gif",
     "index.html": "/resume/index.html",
     "main.bd0532da.css.map": "/resume/static/css/main.bd0532da.css.map",
-    "main.d5ab99ec.js.map": "/resume/static/js/main.d5ab99ec.js.map",
+    "main.d0c4df5c.js.map": "/resume/static/js/main.d0c4df5c.js.map",
     "453.8ab44547.chunk.js.map": "/resume/static/js/453.8ab44547.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.bd0532da.css",
-    "static/js/main.d5ab99ec.js"
+    "static/js/main.d0c4df5c.js"
   ]
 }
