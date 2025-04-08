@@ -11,8 +11,8 @@ const About = () => {
   const folders = new Map();
 
   const files = new Map();
-  files.set("generalInfo", ``);
-  files.set("hobbies", ``);
+  files.set("generalInfo", `THIS IS PLACEHOLDER, CONTENT WILL BE ADDED "SOON"`);
+  files.set("hobbies", `THIS IS PLACEHOLDER, CONTENT WILL BE ADDED "SOON"`);
   files.set("IUseArchBtw", `I use arch btw`);
 
   const [displayQueue, setDisplayQueue] = useState([]);

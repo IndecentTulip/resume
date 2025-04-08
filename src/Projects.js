@@ -10,8 +10,9 @@ const Projects = () => {
   const path = "~/projects"
   const folders = new Map();
   const files = new Map();
-  files.set("helth_monitoring_sys", `hello this is placeholder`);
-  files.set("tor_cli", `hello this is placeholder`);
+  files.set("helth_monitoring_sys", `THIS IS PLACEHOLDER, CONTENT ABOUT THE PROJECT WILL BE ADDED "SOON", you can see more on my github`);
+  files.set("tor_cli", `THIS IS PLACEHOLDER, CONTENT ABOUT THE PROJECT WILL BE ADDED "SOON", you can see more on my github`);
+  files.set("htmx+React+Golang_ecomerse", `THIS IS PLACEHOLDER, CONTENT ABOUT THE PROJECT WILL BE ADDED "SOON", THIS ONE IS STILL IN PROGRESS, you can see more on my github`);
 
   const [displayQueue, setDisplayQueue] = useState([]);
   const enqueue = (item) => {
